@@ -9,7 +9,6 @@
 
 
 
-
 /*cuerpo de la pagina */
 body{
 
@@ -20,8 +19,9 @@ body{
 
 }
 
-
-
+.formulario {
+    display: none;
+}
 
 /*Barra De Navegacion*/
 header{

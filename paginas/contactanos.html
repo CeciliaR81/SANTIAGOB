@@ -7,11 +7,30 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>MOTOS</title>
+    <script src="./jquery-3.7.1.min.js"></script>
      <!--Fonts-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+ 
+<script>
+    $(document).ready(function() {
+        $("#contactBtn").click(function(event) {
+            event.preventDefault();
+            $(".formulario").toggle();
+        });
+
+        $("#registerForm").submit(function(event) {
+            event.preventDefault(); // Evita el envío real del formulario//
+            $(".formulario").hide();
+            alert("Formulario enviado. Redirigiendo a contactenos...");
+            // Aquí puedO redirigir a la página de inicio de sesión
+            // window.location.href = "inicio_sesion.html";
+        });
+    });
+</script>
+
 <body>
     <header>
         <img src="../img/logo.jpg" alt="MOTO">
@@ -20,7 +39,7 @@
             <ul> 
                 <li><a href="index.html">Inicio</a> </li>
                 <li><a href="categorias.html">Categorias</a> </li>
-                <li><a href="contactanos.html">Contactanos</a> </li>
+                <li><a href="#" id="ContactBtn"></a>contactanos</a> </li>
             </ul>
         </nav>
     </header>
@@ -28,15 +47,13 @@
 
         <main>
            
-           
-          
-            <form class="formulario" action="" method="post">
+            <form class="formulario" id="registerForm" action="" method="post">
             <label for="Nombre">Nombre</label>
             <input type="text" name="Nombre">
-            <br>
+              <br>
             <label for="email">Email</label>
             <input type="text" name="Email">
-            <br>
+              <br>
             <label for="telefono">telefono</label>
             <input type="text" name="Telefono">
             <br>            
@@ -45,36 +62,33 @@
                 <option value="">bogota</option>
                 <option value="">medellin</option>
                 <option value="">bucaramanga</option>
-                <br>
- 
+                <br> 
             </select>
-<br>
+                <br>
             <label for="check">acepta los terminos</label>
             <input type="checkbox" name="check" id="">
-<br>
+                <br>
             <label for="tipo">como desea que lo contactanos</label>
-            <br>
+                <br>
             <input type="radio" name="ok" id="">
             <label for="1">telefono</label>
             <input type="radio" name="ok" id="">   
             <label for="2">whatsapp</label>
             <input type="radio" name="ok" id="">   
             <label for="3">correo</label>      
-<br>
-<br>
+                <br>
+                <br>
           <p class="parrafo_mapa">¿donde nos ubicamos?</p><br>
          
      <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.871460091005!2d-74.09582942603461!3d4.6170099423795214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f996f5e03171b%3A0x40d523ef8809ea1d!2sCl.%2015%20%2332a15%2C%20Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1714183918938!5m2!1ses-419!2sco"  ></iframe>
-<br>
+                <br>
 
             <input class="enviar" type="submit" value="enviar">
+            </form>
         </main>
    
     
 </body>
-
-
-
 
 
 <footer>
